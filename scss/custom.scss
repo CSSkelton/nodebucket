@@ -1,0 +1,11 @@
+// Why isn't this working?
+// Custom variables aren't overwriting
+
+// custom variables
+$primary: #0e1a40;
+$secondary: #946b2d;
+$info: #5d5d5d;
+
+// import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+

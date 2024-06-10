@@ -1,14 +1,18 @@
 /**
  * Title: app.js
  * Author: Professor Krasso
- * Date: 8/5/2023
+ * Editor: Cody Skelton
+ * Date: 06.09.2024
  */
+
 'use strict'
 
 // Require statements
 const express = require('express')
 const createServer = require('http-errors')
 const path = require('path')
+// Import statement for route files
+const employeeRoute = require("./routes/employee-route");
 
 // Create the Express app
 const app = express()
@@ -18,6 +22,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '../dist/nodebucket')))
 app.use('/', express.static(path.join(__dirname, '../dist/nodebucket')))
+// Add custom routes here
+app.use("/api/employees", employeeRoute);
 
 // error handler for 404 errors
 app.use(function(req, res, next) {

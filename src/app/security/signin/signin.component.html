@@ -1,0 +1,35 @@
+<div class="container bg-primary" style="height: 100%;">
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card shadow bg-secondary">
+        <div class="card-title text-center border-bottom">
+          <h2 class="p-3">Employee Sign In</h2>
+        </div>
+
+        <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="signinForm" (ngSubmit)="signin(); signinForm.reset();">
+            <div>
+              <label for="empId" class="form-label">Employee ID</label>
+              <input type="text" class="form-control" id="empId" formControlName="empId">
+            </div>
+
+            <br/>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-info">
+                Sign In
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <a routerLink="/" class="text-dark">Return</a>
+    </div>
+  </div>
+</div>

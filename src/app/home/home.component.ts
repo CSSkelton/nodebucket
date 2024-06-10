@@ -6,6 +6,8 @@
 
 // imports statements
 import { Component } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,5 +15,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  isSignedIn: boolean;
 
+  constructor (private cookieService: CookieService, private router: Router) {
+    this.isSignedIn = this.cookieService.get('session_user') ? true:false;
+  }
 }

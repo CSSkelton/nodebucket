@@ -1,11 +1,19 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <h1>Home Component Works! <span class="material-icons">thumb_up</span></h1>
+<div class="container-fluid" style="height:100%">
+  <div class="row align-items-center">
+    <div class="column">
+      <div class="card" *ngIf="!isSignedIn">
+        <div class="card-title bg-secondary text-info text-center">Welcome to Nodebucket!</div>
+        <br/>
+        <div class="card-content bg-secondary text-info text-center">Please sign in to continue</div>
+      </div>
+
+      <div class="card" *ngIf="isSignedIn">
+        <div class="card-title bg-secondary text-info text-center">Welcome to Nodebucket!</div>
+        <br/>
+        <div class="card-content bg-secondary text-info text-center">You can find your tasks under your profile tab!</div>
+      </div>
     </div>
   </div>
-
-  <a routerLink="/security">Test Security Module</a>
 </div>
 
 

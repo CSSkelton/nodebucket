@@ -55,7 +55,7 @@ export class SigninComponent {
         this.cookieService.set('session_user', empId, 1);
         this.cookieService.set('session_name', `${employee.firstName} ${employee.lastName}`, 1);
 
-        const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+        const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/tasks';
 
         this.isLoading = false;
 

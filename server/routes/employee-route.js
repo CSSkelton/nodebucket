@@ -80,11 +80,35 @@ router.get("/:empId", (req, res, next) => {
 });
 
 /**
+ * TODO: Update Swagger Documentation
  * findAllTasks API
  * @returns JSON array of all tasks
  * @throws { 500 error } - if there is a server error
  * @throws { 400 error } - if the employee id is not a number
  * @throws { 404 error } - if the tasks are not found
+ * @openapi
+ * /api/employees/{empId}:
+ *  get:
+ *    summary: Search for employee document in database
+ *    description: Validate employee existence for login
+ *    parameters:
+ *      - name: empId
+ *        in: path
+ *        required: true
+ *        description: employee ID
+ *        schema:
+ *          type: number
+ *    responses:
+ *      '200':
+ *        description: Employee object
+ *      '400':
+ *        description: Bad Request
+ *      '404':
+ *        description: Resource not found
+ *      '500':
+ *        description: Server Error
+ *    tags:
+ *      - Employee
  */
 router.get('/:empId/tasks', (req, res, next) => {
   try {
@@ -118,7 +142,31 @@ router.get('/:empId/tasks', (req, res, next) => {
 });
 
 /**
+ * TODO: Update Swagger Documentation
  * createTask API;
+ * @openapi
+ * /api/employees/{empId}:
+ *  get:
+ *    summary: Search for employee document in database
+ *    description: Validate employee existence for login
+ *    parameters:
+ *      - name: empId
+ *        in: path
+ *        required: true
+ *        description: employee ID
+ *        schema:
+ *          type: number
+ *    responses:
+ *      '200':
+ *        description: Employee object
+ *      '400':
+ *        description: Bad Request
+ *      '404':
+ *        description: Resource not found
+ *      '500':
+ *        description: Server Error
+ *    tags:
+ *      - Employee
  */
 
 const taskSchema = {

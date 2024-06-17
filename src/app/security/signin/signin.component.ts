@@ -1,3 +1,9 @@
+/**
+ * title: signin.component.ts
+ * author: Cody Skelton
+ * date: 06.17.2024
+ */
+
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';

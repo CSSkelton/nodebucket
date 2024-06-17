@@ -43,7 +43,7 @@ const openapiSpecification = swaggerJsdoc(options);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
 // Add custom routes here
-app.use("/api", employeeRoute);
+app.use("/api/employees", employeeRoute);
 
 // error handler for 404 errors
 app.use(function(req, res, next) {

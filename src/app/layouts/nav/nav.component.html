@@ -1,4 +1,4 @@
-<nav class="ps-3 navbar navbar-expand-sm navbar-primary bg-secondary fixed-top">
+<nav class="ps-3 navbar navbar-expand-sm fixed-top" style="background-color: #946b2d">
 
   <a routerLink="/" class="navbar-brand">Nodebucket</a>
 
@@ -24,7 +24,7 @@
         <a href="#" class="nav-link">About Us</a>
       </li>
       <li>
-        <a href="#" class="nav-link">Contact Us</a>
+        <a routerLink="/contact" class="nav-link">Contact Us</a>
       </li>
 
       <li *ngIf="!isSignedIn">

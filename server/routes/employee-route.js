@@ -49,6 +49,7 @@ const ajv = new Ajv(); // create new instance of AJV object from the npm package
  */
 router.get("/:empId", (req, res, next) => {
 
+  console.log("We got this far");
   try {
     let { empId } = req.params;
     empId = parseInt(empId, 10);
@@ -60,6 +61,7 @@ router.get("/:empId", (req, res, next) => {
     }
 
     // database query is handled here
+    console.log("Made it here");
     mongo(async db => {
       const employee = await db.collection("employees").findOne({ empId });
 

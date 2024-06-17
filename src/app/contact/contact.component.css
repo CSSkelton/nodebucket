@@ -1,0 +1,23 @@
+.gold {
+  background-color: #946b2d;
+}
+
+.text-blue {
+  color: #0e1a40;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.contact-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-column {
+  width: 45%;
+  min-height: 500px;
+}

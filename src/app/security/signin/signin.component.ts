@@ -40,6 +40,7 @@ export class SigninComponent {
     console.log('signinForm', this.signinForm.value);
 
     const empId = this.signinForm.controls['empId'].value;
+    console.log(empId);
 
     if (!empId || isNaN(parseInt(empId, 10))) {
       this.errorMessage = 'The employee ID is invalid, please try again.';

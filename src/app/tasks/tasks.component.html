@@ -1,1 +1,49 @@
-<p>tasks works!</p>
+<div class="tasks-container container-fluid pt-2 full-height" style="height: 100vh">
+
+  <h1 class="text-center" style="margin: 25px auto 25px; padding: 5px; background-color: #946b2d; width: 500px;">My Tasks</h1>
+
+  <!-- tasks form -->
+  <form #taskForm="ngForm" (ngSubmit)="createTask(taskForm); taskForm.reset();" class="tasks-form">
+    <input type="text" name="task" ngModel required placeholder="Enter a new task">
+    <input type="submit" [disabled]="!taskForm.valid" value="Add Task">
+  </form>
+
+  <!-- tasks container -->
+  <div class="tasks-columns">
+    <!-- tasks todo column -->
+    <div class="column task-column gold">
+      <h2 class="silver" style="margin-bottom: 0;">To Do</h2>
+
+      <div class="tasks-box">
+
+        <!-- no tasks found -->
+        <div *ngIf="todo.length === 0 || !todo" class="no-tasks silver">
+          No tasks to do yet!
+        </div>
+
+        <!-- tasks card -->
+        <div *ngFor="let item of todo" class="tasks-card silver">
+          {{ item.text }}
+        </div>
+      </div>
+    </div>
+
+    <!-- tasks done column -->
+    <div class="column task-column">
+      <h2 class="silver" style="margin-bottom: 0;">Done</h2>
+
+      <div class="tasks-box gold">
+
+        <!-- no tasks found -->
+        <div *ngIf="done.length === 0 || !done" class="no-tasks silver">
+          No tasks done yet!
+        </div>
+
+        <!-- tasks card -->
+        <div *ngFor="let item of done" class="tasks-card silver">
+          {{ item.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

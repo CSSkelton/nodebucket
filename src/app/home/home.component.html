@@ -1,17 +1,15 @@
 <div class="container-fluid pt-2 full-height" style="height:100vh">
-  <div class="row align-items-center">
-    <div class="column">
-      <div class="card" *ngIf="!isSignedIn">
-        <div class="card-title bg-secondary text-info text-center">Welcome to Nodebucket!</div>
-        <br/>
-        <div class="card-content bg-secondary text-info text-center">Please sign in to continue</div>
-      </div>
+  <div class="home-box align-items-center">
+    <div class="card"  style="background-color: #0e1a40;"  *ngIf="!isSignedIn">
+      <div class="card-title text-blue text-center gold" style="padding: 20px; font-size: larger; font-weight: bolder;">Welcome to Nodebucket!</div>
+      <br/>
+      <div class="card-content text-blue text-center gold" style="padding: 20px; font-size: larger; font-weight: bolder;">Please <a routerLink="/security/signin">sign in</a> to continue</div>
+    </div>
 
-      <div class="card" *ngIf="isSignedIn">
-        <div class="card-title bg-secondary text-info text-center">Welcome to Nodebucket!</div>
-        <br/>
-        <div class="card-content bg-secondary text-info text-center">You can find your tasks under your profile tab!</div>
-      </div>
+    <div class="card" style="background-color: #0e1a40;" *ngIf="isSignedIn">
+      <div class="card-title text-center gold text-blue" style="padding: 20px; font-size: larger; font-weight: bolder; margin: auto auto;">Welcome to Nodebucket!</div>
+      <br/>
+      <div class="card-content text-center gold text-blue" style="padding: 20px; font-size: larger; font-weight: bolder; margin: auto auto;">You can find your tasks under your profile tab!</div>
     </div>
   </div>
 </div>

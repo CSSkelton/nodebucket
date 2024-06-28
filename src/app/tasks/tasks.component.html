@@ -11,7 +11,13 @@
   <!-- tasks container -->
   <div class="tasks-columns">
     <!-- tasks todo column -->
-    <div class="column task-column gold">
+    <div class="column task-column gold"
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList]"
+      (cdkDropListDropped)="drop($event)">
+
       <h2 class="silver" style="margin-bottom: 0;">To Do</h2>
 
       <div class="tasks-box">
@@ -22,8 +28,18 @@
         </div>
 
         <!-- tasks card -->
-        <div *ngFor="let item of todo" class="tasks-card silver">
+        <div *ngFor="let item of todo" cdkDrag class="tasks-card silver">
           {{ item.text }}
+
+          <div class="float-end">
+            <button (click)="deleteTask(item._id)" class="btn">
+              <span class="material-icons">delete</span>
+            </button>
+          </div>
+
+          <div>
+            <button (click)="deleteTask(item._id)" class="btn">Delete</button>
+          </div>
         </div>
       </div>
     </div>
@@ -32,7 +48,12 @@
     <div class="column task-column">
       <h2 class="silver" style="margin-bottom: 0;">Done</h2>
 
-      <div class="tasks-box gold">
+      <div class="tasks-box gold"
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList]"
+        (cdkDropListDropped)="drop($event)">
 
         <!-- no tasks found -->
         <div *ngIf="done.length === 0 || !done" class="no-tasks silver">
@@ -40,8 +61,18 @@
         </div>
 
         <!-- tasks card -->
-        <div *ngFor="let item of done" class="tasks-card silver">
+        <div *ngFor="let item of done" cdkDrag class="tasks-card silver">
           {{ item.text }}
+
+          <div class="float-end">
+            <button (click)="deleteTask(item._id)" class="btn">
+              <span class="material-icons">delete</span>
+            </button>
+          </div>
+
+          <div>
+            <button (click)="deleteTask(item._id)" class="btn">Delete</button>
+          </div>
         </div>
       </div>
     </div>

@@ -18,6 +18,9 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AboutComponent } from './about/about.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +30,17 @@ import { ContactComponent } from './contact/contact.component';
     NavComponent,
     FooterComponent,
     TasksComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

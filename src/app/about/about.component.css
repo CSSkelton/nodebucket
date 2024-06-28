@@ -1,0 +1,29 @@
+.gold {
+  background-color: #946b2d;
+}
+
+.text-blue {
+  color: #0e1a40;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+img {
+  max-width: 100%;
+  padding: 20px;
+}
+
+figcaption {
+  text-align: center;
+}

@@ -6,16 +6,15 @@
   color: #0e1a40;
 }
 
-.home-box {
+.error-container {
   width: 100%;
-  margin: auto auto;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.error-box {
   margin-top: 100px;
   display: flex;
   justify-content: space-around;
   height: 30%;
-}
-
-a {
-  text-decoration: none;
-  color: #5d5d5d;
 }

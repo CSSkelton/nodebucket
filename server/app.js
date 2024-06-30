@@ -15,6 +15,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 // Import statement for route files
 const employeeRoute = require('./routes/employee-route');
+const port = process.env.PORT || 4000;
 
 // Create the Express app
 const app = express()
@@ -25,6 +26,9 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '../dist/nodebucket')))
 app.use('/', express.static(path.join(__dirname, '../dist/nodebucket')))
+app.listen(port, () => {
+  console.log(`Nodebucket listening on port ${port}`)
+})
 
 // object literal named options for API testing (thanks Joanna)
 const options = {
